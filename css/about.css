@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card{
+    margin: 5vh 0 5vh 0;
+    padding: 3%;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 10000000000px;
+    margin: 0 3vw 0 3vw;
+}
+
+.text{
+    width: 60%;
+    height: 30vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jura", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    h1{
+        color: #38bdf8;
+        font-size: 2.8vw;
+        padding: 1vw;
+        background-color: rgba(7, 32, 53, 0.911);
+        border-radius: 10px;
+    }
+    p{
+        font-size: 1.4vw;
+        padding: 2vw;
+        background-color: rgba(7, 32, 53, 0.911);
+        border-radius: 10px;
+    }
+}
+
+#webpage .image{
+    background-image: url(../images/about1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#personal .image{
+    background-image: url(../images/about2.png);
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (orientation: portrait){
+    .text{
+        h1{
+            font-size: 2.8vh;
+        }
+        p{
+            font-size: 1.4vh;
+        }
+    }
+}
+
+@media screen and (max-width: 769px){
+    .card{
+        height: 40vh;
+    }
+
+}
+@media screen and (min-height: 1150px){
+    .card{
+        margin: 7vh 0 0 0;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .card{
+        flex-direction: column;
+        padding: 0 3% 0 3%;
+        height: 50vh;
+    }
+    .text{
+        width: 100%;
+        height: 55%;
+        h1{
+            font-size: 8vw;
+        }
+        p{
+            font-size: 4vw;
+        }
+    }
+    #webpage{
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+    }
+    .image{
+        margin: 3vw 0 10vw 0;
+
+    }
+}
+
+@media screen and (max-width: 351px){
+    .card{
+        height: 40vh;
+        margin-top: 5vh;
+        padding: 0;
+    }
+}

@@ -1,0 +1,205 @@
+*{box-sizing: border-box;}
+body{background-color: black;}
+main{ margin-top: 15vh;}
+
+.text{
+    height: 17vh;
+    padding: 1vh;
+    text-align: center;
+    h1{
+        color: #38bdf8;
+        font-size: 2.5vw;
+        margin-bottom: 1vh;
+    }
+    p{
+        font-size: 1.3vw;
+    }
+}
+
+.mapContainer{
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    border-radius: 40px;
+
+    img{
+        border-radius: 2vw;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.label{
+    position: absolute;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    border: 4px solid white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition:
+        width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s ease,
+        background 1ms ease-in-out ;
+}
+
+.label:hover {z-index: 999;}
+
+.label:hover .icon{
+    width: 200px;
+    height: 150px;
+    background: rgb(245, 239, 239);
+    border: white 2px solid;
+    border-radius: 15px;
+}
+
+.icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--cityImg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 0.5s ease 0.2s;
+}
+
+.icon::after {
+    content: attr(data-city);
+    transform: translateX(-50%);
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(244, 241, 241);
+    font-size: 2vw;
+    font-weight: 1000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.25s;
+}
+
+.label:hover .icon::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.label:hover .icon::after {
+    opacity: 1;
+}
+     
+@media (min-width: 1025px){
+.places-scroll, .slider{ display: none; }
+}
+
+@media screen and (min-width: 1025px) and (max-height: 800px){
+main{ margin-top: 150px;}
+.text{ height: 120px;}
+}
+
+@media screen and (max-width: 1024px){
+    .mapContainer, .mapContainer, .map{ display: none; }
+    main{margin-top: 140px;}
+    body{
+        background-image: url(../images/UNbackground.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .slider{
+        height: 17vw;
+        h1{
+            font-size: 5vw;
+        }
+        p{
+            font-size: 3vw;
+        }
+    }
+    
+    .places-scroll {
+        display: flex;
+        overflow-x: auto;
+        height: 80vh;
+        min-height: 400px;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        padding: 10vh 20px 5vh 20px;
+    }
+
+    .place-card{
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+        background: hsla(222, 42%, 12%, 0.8);
+        border-radius: 15px;
+        height: 54vh;
+        min-height: 350px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8vh 1% 3vh 1%;
+        h2{
+            color: hsl(212, 100%, 78%);
+            font-size: 5.5vw;
+            margin: 10px 0;
+        }
+    }
+
+    .image{
+        background-image: var(--cityImg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        width: 90%;
+        height: 250px;
+        max-height: 260px;
+        margin-bottom: 5vh;
+    }
+} 
+
+@media screen and (max-width: 1024px) and (max-height: 565px){
+    .places-scroll{margin-top: 40px;}
+}
+
+@media screen and (max-width: 800px){
+    main{margin-top: 80px;}
+}
+
+@media screen and (max-width: 450px){
+    .slider{
+        height: 17vh;
+        h1{font-size: 8vw;}
+        p{font-size: 5vw;}
+    }
+    .places-scroll{
+        height: 70vh;
+        padding: 5vh 40px 10vh 40px;
+    }
+    .place-card{
+        flex: 0 0 85%;
+    }
+    .image{
+        height: 60%;
+    }
+}

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+*{box-sizing: border-box;}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.card{
+    margin: 20px;
+    border-radius: 50px;
+    background-color: hsla(215, 40%, 16%, 0.904);
+    height: 80vh;
+    width: 30%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    transition: all 1s ease;
+}
+
+.image{
+    width:90%;
+    height: 50%;
+    position: absolute;
+    top: 15%;
+    z-index: 3;
+    border-radius: 50px;
+    background-color: green;
+    transition: all 1s ease;
+}
+
+#UN{
+    background-image: url(../images/UNcover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#MM{
+    background-image: url(../images/MMcover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#FU{
+    background-image: url(../images/FUcover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text{
+    width:90%;
+    height: 40vh;
+    position: absolute;
+    top: 18%;
+    z-index: 2;
+    border: rgb(10, 10, 145) solid 2px;
+    background-color: black;
+    border-radius: 50px;
+    transition: all 1s ease;
+    font-family: "Jura", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20vh 4% 5vh 4%;
+
+    h1{
+        font-size: 1.7rem;
+        color: #2dbdfa;
+    }
+
+    p{
+        font-size: 1.1rem;
+    }
+}
+
+.button{
+    width:30%;
+    height: 8%;
+    position: absolute;
+    bottom: 4%;
+    z-index: 2;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #0f172a;
+    color: white;
+    transition: all 0.5s ease;
+
+    a{
+        font-size: 2rem;
+        font-family: "Jura", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+    }
+}
+
+.card:hover, .card:active{
+    transform: scale(1.05);
+    .image{
+        transform: translateY(-13%);
+    }
+    .text{
+        transform: scale(0.95) translateY(35%);
+    }
+}
+
+.button:hover{
+    transform: translateY(-5px);
+    color: #3dbbf0;
+}
+
+@media screen and (max-width: 1081px){
+    main{
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .card{
+        width: 90%;
+        height: 70vh;
+        margin: 0 auto 4rem auto;
+    }
+    .image{
+        transform: translateY(-13%);
+    }
+    .text{
+        height: 35vh;
+        transform: scale(0.95) translateY(35%);
+        padding: 18vh 4% 3vh 4%;
+    }
+    .button a{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .text{
+        height: 35vh;
+        padding: 17vh 4% 3vh 4%;
+        h1{font-size: 1.6rem;}
+        p{font-size: 0.9rem;}
+    }
+    .button a{
+        font-size: 1.6rem;
+    }
+}
+

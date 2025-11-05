@@ -1,0 +1,122 @@
+*{box-sizing: border-box;}
+
+html{
+    scroll-behavior: smooth; 
+    scroll-padding-top: 150px; 
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    padding-left: 6%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.text{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 70vw;
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.text div{
+    transition: all 2s ease;
+    height: auto;
+    padding: 20px;
+    width: 100%;
+    border: rgba(255, 255, 255, 0.3) 2px solid;
+    border-radius: 30px;
+    h2{
+        font-size: 3vw;
+    }
+
+    p{
+        padding: 15px;
+        font-size: 1.5vw;
+    }
+}
+    
+.s1, .s2, .s3{margin-bottom: 20px;}
+.s4{margin-bottom: 0px;}
+
+.sidebar{
+    position: fixed;
+    margin: 10px;
+    padding: 3vh 1vw;
+    right: 2vw;
+    top: 140px;
+    border-radius: 30px;
+    background-color: rgba(15, 23, 42, 0.92);
+    text-align: center;
+    width: 18vw;
+    height: 70vh;
+    h1{font-size: 2.5vw;}
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li{
+        color: #38bdf8;
+        font-size: 1.5vw;
+        margin-top: 40px;
+    }
+    
+    li:hover{
+        transform: scale(1.15);
+        transition: all 0.7s ease;
+        color: #64cefc;
+        font-weight: 800;
+    }
+}
+
+button{
+    display: block;
+    margin: -10px 22% 30px auto;
+    border-radius: 30px;
+    width: 130px;
+    height: 60px;
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #ffffff00;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    color: #ffffff;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 450px){
+    main{
+        margin-top: 60px;
+        padding: 0;
+    }
+    .sidebar{ display: none;}
+
+    .text{
+        margin: auto;
+        width: 95vw;
+        div{
+            h2{font-size: 8vw;}
+            p{font-size: 4vw;}
+        }
+    }
+}
