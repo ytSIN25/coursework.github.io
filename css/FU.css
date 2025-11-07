@@ -14,11 +14,11 @@ main{
 footer{margin: 0;}
 
 .container{
-    overflow: hidden;
     display: flex;
     align-items: center;
     height: fit-content;
-    width: 30vw;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
     margin: 1vw;
     transition: all 1s ease;
     border-radius: 10px;
@@ -27,7 +27,8 @@ footer{margin: 0;}
 
 .cover{
     height: 30vh;
-    width: 30vw;
+    width: 31vw;
+    margin: 1vw;
     flex-shrink: 0;
     transition: transform 1s ease;
     align-items: center;
@@ -38,7 +39,6 @@ footer{margin: 0;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 1vw 0 0;
 }
 
 #c1{background: url(../images/FUcover1.jpg) center/cover no-repeat;}
@@ -55,6 +55,7 @@ footer{margin: 0;}
     height: 30vh;
     width: 30vw;
     flex-shrink: 0;
+    margin: 1vw;
     transition: transform 1s ease;
     display: flex;
     justify-content: center;
@@ -67,25 +68,12 @@ footer{margin: 0;}
     }
 }
 
-@media screen and (min-width: 1024px){
-    .container:hover{
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
+.container:hover{
+    background-color: rgba(255, 255, 255, 0.65);
+}
 
-    .container:hover .cover {
-        width: 31vw;
-        margin: 1vw;
-    }
-
-    .container:hover .content {
-        margin: 1vw;
-    }
-
-
-    .content:hover{
-        transform: scale(1.07);
-    }
+.content:hover{
+    transform: scale(1.07);
 }
 
 @media screen and (max-width: 1024px){
