@@ -8,6 +8,10 @@ html{
 a{
     text-decoration: none;
     color: inherit;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    word-break: break-all;
+    white-space: normal;
 }
 
 body{
@@ -44,6 +48,8 @@ main{
     p{
         padding: 15px;
         font-size: 1.5vw;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
     }
 }
     
